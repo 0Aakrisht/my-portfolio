@@ -137,24 +137,17 @@ body {
 }
 
 .hero-visual .portfolio-title {
-    position: absolute;
-    left: 8px;
-    top: -42px; /* raise above the image */
-    margin: 0;
-    padding: 0;
-    white-space: nowrap;
-    font-size: clamp(3rem, 6.5vw, 5.2rem);
-    z-index: 3; /* keep main title above the image */
+    display: none; /* Hide the duplicate title in visual wrapper */
 }
 
 .hero-visual .hero-image {
-    margin: 0.75rem 0 1rem 0;
+    margin: 0;
     padding-left: 0;
 }
 
 /* Slight bump so the title overlaps the top edge more precisely */
 .hero-visual .image-container {
-    margin-top: 10px;
+    margin-top: 0;
 }
 
 /* Keep previous title rules for non-visual context but lower their effect */
@@ -171,10 +164,11 @@ body {
     font-size: clamp(3.5rem, 6vw, 5.5rem);
     font-weight: 700;
     line-height: 0.9;
-    margin-bottom: 0.75rem;
+    margin-bottom: 2rem;        /* Increased from 1rem to 2rem */
     color: #f5f5dc;
     margin-left: 1.25rem;
     letter-spacing: 0.5px;
+    display: block; /* Make sure it's visible */
 }
 
 .port {
@@ -258,13 +252,13 @@ body {
 .folio-text {
     font-family: 'Playfair Display', serif;
     position: absolute;
-    top: 10rem;            /* Move to center of image vertically */
-    right: 35rem;          /* Move very close to directly behind image */
+    top: 8rem;             /* Position it behind the image vertically */
+    left: 12rem;           /* Move it to the left side behind the image */
     pointer-events: none;
     transform: translateX(0);
     width: max-content;
     z-index: 1;            /* Behind the image but visible */
-    opacity: 0.18;         /* More visible when very close */
+    opacity: 0.1;          /* Very subtle behind the image */
 }
 
 .folio-1, .folio-2, .folio-3 {
@@ -764,12 +758,12 @@ body {
 
     .folio-text {
         position: absolute;
-        top: 16rem;            /* Move directly behind the mobile image center */
+        top: 12rem;            /* Position behind the mobile image */
         right: auto;
         left: 50%;
         transform: translateX(-50%);
         z-index: 1;            /* Behind image but visible on mobile */
-        opacity: 0.12;         /* More visible on mobile when very close */
+        opacity: 0.08;         /* More subtle on mobile */
         margin-top: 0;
     }
     
