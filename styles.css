@@ -133,6 +133,7 @@ body {
     position: relative;
     display: inline-block;
     margin-left: 1.25rem;
+    z-index: 2; /* Keep the visual element above decorative text */
 }
 
 .hero-visual .portfolio-title {
@@ -207,7 +208,7 @@ body {
     padding: 18px;
     box-shadow: 0 20px 60px rgba(0,0,0,0.35);
     animation: floaty 6.5s ease-in-out infinite;
-    z-index: 2; /* ensure image sits above other text */
+    z-index: 3; /* Ensure image sits above decorative text */
 }
 
 /* Ensure other remaining text sits under the image when overlapping */
@@ -251,17 +252,19 @@ body {
 .hero-right {
     position: relative;
     min-height: 520px;
+    z-index: 0; /* Keep right side behind the image */
 }
 
 .folio-text {
     font-family: 'Playfair Display', serif;
     position: absolute;
-    top: 2.5rem;
-    right: 8rem;           /* move leftwards */
+    top: 10rem;            /* Move to center of image vertically */
+    right: 35rem;          /* Move very close to directly behind image */
     pointer-events: none;
-    transform: translateX(-20%);
+    transform: translateX(0);
     width: max-content;
-    z-index: 0; /* keep decorative text under the image */
+    z-index: 1;            /* Behind the image but visible */
+    opacity: 0.18;         /* More visible when very close */
 }
 
 .folio-1, .folio-2, .folio-3 {
@@ -760,13 +763,14 @@ body {
     }
 
     .folio-text {
-        position: relative;
-        top: 0;
+        position: absolute;
+        top: 16rem;            /* Move directly behind the mobile image center */
         right: auto;
         left: 50%;
         transform: translateX(-50%);
-        z-index: 0;
-        margin-top: 1rem;
+        z-index: 1;            /* Behind image but visible on mobile */
+        opacity: 0.12;         /* More visible on mobile when very close */
+        margin-top: 0;
     }
     
     .hero-left .social-links {
