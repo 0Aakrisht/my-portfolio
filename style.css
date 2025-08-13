@@ -683,7 +683,7 @@ footer {
 
 /* Light Theme */
 body.light-theme {
-    background-color: #f4f4f4;
+    background-color: #83ADDE; /* Change this line from #f4f4f4 to #83ADDE */
     color: #333;
 }
 
@@ -713,7 +713,7 @@ body.light-theme h2 {
 }
 
 body.light-theme #skills {
-    background-color: #fff;
+    background-color: #83ADDE; /* Changed from #fff to match your theme */
 }
 
 body.light-theme .skill {
@@ -740,7 +740,7 @@ body.light-theme .project {
 }
 
 body.light-theme #contact {
-    background-color: #f4f4f4;
+    background-color: #83ADDE; /* Changed from #f4f4f4 to match your theme */
 }
 
 body.light-theme #contact input, 
@@ -768,6 +768,78 @@ body.light-theme footer {
 body.light-theme .burger div {
     background-color: #333;
 }
+
+/* New Light Theme Styles */
+:root[data-theme="light"] {
+  --lm-bg: #83ADDE;        /* replaces white */
+  --lm-surface: #83ADDE;   /* cards/sections/forms */
+  --lm-text: #0b1b2e;      /* high-contrast text */
+  --lm-border: #5d93d3;
+  color-scheme: light;
+}
+
+/* Base */
+:root[data-theme="light"] body {
+  background-color: #83ADDE; /* Change this line to #83ADDE */
+  color: var(--lm-text);
+}
+
+/* Header/Nav */
+:root[data-theme="light"] header,
+:root[data-theme="light"] nav {
+  background: rgba(131,173,222,0.85);
+  backdrop-filter: saturate(140%) blur(6px);
+  box-shadow: 0 2px 24px rgba(11,27,46,0.12);
+}
+:root[data-theme="light"] .nav-links a { color: var(--lm-text); }
+:root[data-theme="light"] .nav-links a:hover { text-decoration: underline; }
+
+/* Sections/surfaces that were white */
+:root[data-theme="light"] section,
+:root[data-theme="light"] .about-container,
+:root[data-theme="light"] .skills-container,
+:root[data-theme="light"] .projects-container,
+:root[data-theme="light"] #contact,
+:root[data-theme="light"] footer,
+:root[data-theme="light"] .card,
+:root[data-theme="light"] .panel {
+  background: #83ADDE; /* Changed from var(--lm-surface) to your color */
+  color: var(--lm-text);
+  border-color: var(--lm-border);
+}
+
+/* Buttons keep dark for contrast on blue bg */
+:root[data-theme="light"] .btn {
+  background: #111827;
+  color: #ffffff;
+  border: 1px solid #111827;
+  box-shadow: 0 6px 16px rgba(17,24,39,0.18);
+}
+:root[data-theme="light"] .btn:hover { background: #0f172a; }
+
+/* Inputs */
+:root[data-theme="light"] input,
+:root[data-theme="light"] textarea,
+:root[data-theme="light"] select {
+  background: var(--lm-surface);
+  color: var(--lm-text);
+  border: 1px solid var(--lm-border);
+  box-shadow: none;
+}
+:root[data-theme="light"] input::placeholder,
+:root[data-theme="light"] textarea::placeholder {
+  color: rgba(11,27,46,0.75);
+}
+:root[data-theme="light"] input:focus,
+:root[data-theme="light"] textarea:focus {
+  outline: none;
+  border-color: #447fc9;
+  box-shadow: 0 0 0 3px rgba(68,127,201,0.35);
+}
+
+/* Links/icons in contact */
+:root[data-theme="light"] .contact-links a { color: var(--lm-text); }
+:root[data-theme="light"] .contact-links a:hover { text-decoration: underline; }
 
 @media (max-width: 768px) {
     .nav-links {
@@ -846,4 +918,28 @@ body.light-theme .burger div {
 
     /* Hide social icons on mobile phones */
     .social-hover-box { display: none !important; }
+}
+
+/* Light theme styles */
+:root {
+    --bg-color: #83ADDE; /* Changed from white/ffffff to your preferred color */
+    --text-color: #333333;
+    --header-bg: rgba(131, 173, 222, 0.95); /* Adjusted to match new background with transparency */
+    --card-bg: rgba(255, 255, 255, 0.9); /* Keep cards slightly lighter for contrast */
+    --border-color: #e0e0e0;
+    --accent-color: #007acc;
+    --button-bg: #007acc;
+    --button-text: #ffffff;
+}
+
+/* Dark theme styles (keep existing) */
+[data-theme="dark"] {
+    --bg-color: #121212;
+    --text-color: #ffffff;
+    --header-bg: rgba(18, 18, 18, 0.95);
+    --card-bg: #1e1e1e;
+    --border-color: #333333;
+    --accent-color: #4fc3f7;
+    --button-bg: #4fc3f7;
+    --button-text: #121212;
 }
