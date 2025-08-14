@@ -144,23 +144,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Theme switcher
-    const themeSwitch = document.getElementById('checkbox');
-
-    // Function to apply theme based on checkbox state
-    const applyTheme = () => {
-        if (themeSwitch.checked) {
-            document.body.classList.remove('light-theme');
-        } else {
-            document.body.classList.add('light-theme');
-        }
-    };
-
-    themeSwitch.addEventListener('change', applyTheme);
-
-    // Apply theme on initial load
-    applyTheme();
-
     // Typewriter effect
     const typewriterText = ["A Frontend Developer", "A learner who loves learning"];
     let textIndex = 0;
@@ -174,13 +157,13 @@ document.addEventListener('DOMContentLoaded', () => {
             charIndex++;
             setTimeout(type, 100);
         } else {
-            cursorElement.style.animation = 'blink 1s infinite'; // Keep cursor blinking
+            cursorElement.style.animation = 'blink 1s infinite';
             setTimeout(erase, 2000);
         }
     }
 
     function erase() {
-        cursorElement.style.animation = 'none'; // Pause cursor blinking while erasing
+        cursorElement.style.animation = 'none';
         if (charIndex > 0) {
             typewriterElement.textContent = typewriterText[textIndex].substring(0, charIndex - 1);
             charIndex--;
